@@ -8,11 +8,11 @@ describe("convertToLowercase", () => {
   ])(
     "should return the input in lowercase when all letters are uppercases",
     ({ input, expected }) => {
-      // arrange
-      // act
+      // Arrange
+      // Act
       const result = convertToLowercase(input);
 
-      // assert
+      // Assert
       expect(result).toEqual(expected);
     }
   );

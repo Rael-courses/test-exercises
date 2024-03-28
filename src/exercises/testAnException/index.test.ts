@@ -2,13 +2,13 @@ import { throwAnException } from "./index";
 
 describe("testAnException", () => {
   it("should throw an exception", () => {
-    // arrange
-    // act
+    // Arrange
+    // Act
     const act = () => {
       throwAnException();
     };
 
-    // assert
+    // Assert
     expect(act).toThrow("I am an exception");
   });
 });
