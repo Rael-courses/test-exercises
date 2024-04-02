@@ -1,8 +1,9 @@
+import { container } from "tsyringe";
 import { NumberValidation } from "./index";
 
-const numberValidation = new NumberValidation();
-
 describe("NumberValidation", () => {
+  const numberValidation = container.resolve(NumberValidation);
+
   describe("validateNumber", () => {
     it.each([
       { input: "0", expected: 0 },

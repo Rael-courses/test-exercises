@@ -1,3 +1,6 @@
+import { singleton } from "tsyringe";
+
+@singleton()
 export class NumberValidation {
   public validateNumber(input: string): number {
     const number = Number(input);

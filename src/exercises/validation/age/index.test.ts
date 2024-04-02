@@ -1,7 +1,9 @@
+import { container } from "tsyringe";
 import { AgeValidation } from "./index";
 
 describe("AgeValidation", () => {
-  const ageValidation = new AgeValidation();
+  const ageValidation = container.resolve(AgeValidation);
+
   describe("validateAge", () => {
     it.each([
       { input: "1", expected: 1 },

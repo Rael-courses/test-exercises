@@ -1,4 +1,5 @@
 import "./extensions";
+import "reflect-metadata";
 
 async function start() {
   console.log("Application starts...");
