@@ -9,6 +9,6 @@ describe("removeDuplicates", () => {
     const result = removeDuplicates(arr);
 
     // Assert
-    expect(result).toEqual([1, 2, 3, 4]);
+    expect(result).toStrictEqual([1, 2, 3, 4]);
   });
 });

@@ -18,7 +18,7 @@ describe("multiplyArrays", () => {
     const result = multiplyArrays(arr1, arr2);
 
     // Assert
-    expect(result).toEqual(expected);
+    expect(result).toStrictEqual(expected);
   });
 
   it("should throw when one array is empty", () => {

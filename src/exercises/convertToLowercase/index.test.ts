@@ -13,7 +13,7 @@ describe("convertToLowercase", () => {
       const result = convertToLowercase(input);
 
       // Assert
-      expect(result).toEqual(expected);
+      expect(result).toStrictEqual(expected);
     }
   );
 });
