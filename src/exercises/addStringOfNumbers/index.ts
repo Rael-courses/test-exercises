@@ -1,8 +1,8 @@
 export function addStringOfNumbers(input: string) {
   if (input === "") return 0;
 
-  const isHavingBadSeparator = /[^-,.\d]/.test(input);
-  if (isHavingBadSeparator) throw new Error("Not valid separator");
+  const isContainingBadCharacters = /[^-,.\d]/.test(input);
+  if (isContainingBadCharacters) throw new Error("Invalid characters");
 
   if (!input.includes(",")) {
     const num = Number(input);

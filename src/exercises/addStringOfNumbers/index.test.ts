@@ -30,7 +30,7 @@ describe("addStringOfNumbers", () => {
     }
   );
 
-  it.each(["-", "a", "+&éghde"])(
+  it.each(["--4", "1-23", "3..5"])(
     "should throw an error when given a string that is not a number",
     (input) => {
       // arrange
@@ -65,6 +65,6 @@ describe("addStringOfNumbers", () => {
     const act = () => addStringOfNumbers(input);
 
     // assert
-    expect(act).toThrow("Not valid separator");
+    expect(act).toThrow("Invalid characters");
   });
 });
