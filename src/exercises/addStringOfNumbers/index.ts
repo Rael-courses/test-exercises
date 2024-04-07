@@ -1,6 +1,7 @@
 export function addStringOfNumbers(input: string) {
   if (input === "") return 0;
 
+  // Regex to catch any character that is not a digit, comma, dot or minus sign
   const isContainingBadCharacters = /[^-,.\d]/.test(input);
   if (isContainingBadCharacters) throw new Error("Invalid characters");
 
