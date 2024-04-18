@@ -1,15 +1,21 @@
 import "reflect-metadata";
 import "./extensions";
-import { fizzBuzz } from "./exercises/fizzbuzz";
+import { container } from "tsyringe";
+import chalk from "chalk";
+import { Prompter } from "./exercises/prompter";
 
 async function start() {
   console.log("Application starts...");
 
-  console.log("hello_world".toCamelCase());
+  const hexColorInput = await container
+    .resolve(Prompter)
+    .prompt("Entrez une couleur hexadécimale (format #RRGGBB) : ");
 
-  for (let i = 0; i < 100; i++) {
-    console.log(fizzBuzz(i));
-  }
+  console.log(
+    chalk.hex(hexColorInput)(
+      "Ce texte est affiché avec la couleur hexadécimale spécifiée."
+    )
+  );
 
   console.log("Application ends...");
 }
