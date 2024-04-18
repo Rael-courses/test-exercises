@@ -9,17 +9,13 @@ describe("isBeforeNow", () => {
     jest.useFakeTimers({
       now: dateNow,
     });
-
     // or
-
     // jest.spyOn(Date, "now").mockReturnValue(dateNow.getTime());
   });
 
   afterEach(() => {
     jest.useRealTimers();
-
     // or
-
     // jest.restoreAllMocks();
   });
 
