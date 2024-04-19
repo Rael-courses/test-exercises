@@ -1,53 +1,12 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<coverage generated="1713529199689" clover="3.2.0">
-  <project timestamp="1713529199689" name="All files">
-    <metrics statements="35" coveredstatements="23" conditionals="8" coveredconditionals="3" methods="4" coveredmethods="3" elements="47" coveredelements="29" complexity="0" loc="35" ncloc="35" packages="2" files="2" classes="2"/>
-    <package name="colorConverter">
-      <metrics statements="20" coveredstatements="20" conditionals="3" coveredconditionals="3" methods="2" coveredmethods="2"/>
-      <file name="index.ts" path="/Users/rael/Documents/Personal/mycodes/projects/test-exercises/src/exercises/hexaToRgb/colorConverter/index.ts">
-        <metrics statements="20" coveredstatements="20" conditionals="3" coveredconditionals="3" methods="2" coveredmethods="2"/>
-        <line num="1" count="1" type="stmt"/>
-        <line num="2" count="1" type="stmt"/>
-        <line num="5" count="1" type="stmt"/>
-        <line num="6" count="1" type="stmt"/>
-        <line num="9" count="10" type="cond" truecount="1" falsecount="0"/>
-        <line num="10" count="1" type="stmt"/>
-        <line num="13" count="9" type="cond" truecount="1" falsecount="0"/>
-        <line num="14" count="3" type="stmt"/>
-        <line num="17" count="6" type="stmt"/>
-        <line num="18" count="6" type="cond" truecount="1" falsecount="0"/>
-        <line num="19" count="2" type="stmt"/>
-        <line num="24" count="4" type="stmt"/>
-        <line num="25" count="4" type="stmt"/>
-        <line num="26" count="4" type="stmt"/>
-        <line num="28" count="4" type="stmt"/>
-        <line num="29" count="4" type="stmt"/>
-        <line num="30" count="2" type="stmt"/>
-        <line num="31" count="2" type="stmt"/>
-        <line num="33" count="2" type="stmt"/>
-        <line num="35" count="2" type="stmt"/>
-      </file>
-    </package>
-    <package name="tintConverter">
-      <metrics statements="15" coveredstatements="3" conditionals="5" coveredconditionals="0" methods="2" coveredmethods="1"/>
-      <file name="index.ts" path="/Users/rael/Documents/Personal/mycodes/projects/test-exercises/src/exercises/hexaToRgb/tintConverter/index.ts">
-        <metrics statements="15" coveredstatements="3" conditionals="5" coveredconditionals="0" methods="2" coveredmethods="1"/>
-        <line num="1" count="1" type="stmt"/>
-        <line num="4" count="1" type="stmt"/>
-        <line num="5" count="1" type="stmt"/>
-        <line num="8" count="0" type="cond" truecount="0" falsecount="1"/>
-        <line num="9" count="0" type="stmt"/>
-        <line num="12" count="0" type="stmt"/>
-        <line num="13" count="0" type="cond" truecount="0" falsecount="1"/>
-        <line num="14" count="0" type="stmt"/>
-        <line num="19" count="0" type="stmt"/>
-        <line num="20" count="0" type="stmt"/>
-        <line num="22" count="0" type="stmt"/>
-        <line num="23" count="0" type="stmt"/>
-        <line num="25" count="0" type="cond" truecount="0" falsecount="3"/>
-        <line num="26" count="0" type="stmt"/>
-        <line num="29" count="0" type="stmt"/>
-      </file>
-    </package>
+<coverage generated="1713532146941" clover="3.2.0">
+  <project timestamp="1713532146941" name="All files">
+    <metrics statements="3" coveredstatements="3" conditionals="0" coveredconditionals="0" methods="2" coveredmethods="2" elements="5" coveredelements="5" complexity="0" loc="3" ncloc="3" packages="1" files="1" classes="1"/>
+    <file name="index.ts" path="/Users/rael/Documents/Personal/mycodes/projects/test-exercises/src/exercises/httpUtils/index.ts">
+      <metrics statements="3" coveredstatements="3" conditionals="0" coveredconditionals="0" methods="2" coveredmethods="2"/>
+      <line num="1" count="1" type="stmt"/>
+      <line num="3" count="1" type="stmt"/>
+      <line num="4" count="1" type="stmt"/>
+    </file>
   </project>
 </coverage>
