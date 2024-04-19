@@ -1,8 +1,22 @@
 import { container } from "tsyringe";
 import { ColorConverter } from "./";
+import { TintConverter } from "../tintConverter";
 
 describe("colorConverter", () => {
   const colorConverter = container.resolve(ColorConverter);
+
+  let tintConverterSpy: jest.SpyInstance;
+  beforeAll(() => {
+    tintConverterSpy = jest.spyOn(TintConverter.prototype, "hexToNum");
+  });
+
+  afterEach(() => {
+    tintConverterSpy.mockClear();
+  });
+
+  afterAll(() => {
+    tintConverterSpy.mockRestore();
+  });
 
   it("should throw an error because it is empty", () => {
     // arrange
@@ -45,6 +59,10 @@ describe("colorConverter", () => {
     "should throw an error because it contains invalid characters",
     (input) => {
       // arrange
+      tintConverterSpy.mockImplementation(() => {
+        throw new Error();
+      });
+
       // act
       const act = () => colorConverter.hexToRgb(input);
 
@@ -56,14 +74,37 @@ describe("colorConverter", () => {
   );
 
   it.each([
-    { input: "#BD3F0A", expected: "rgb(189,63,10)" },
-    { input: "#A3BF7E", expected: "rgb(163,191,126)" },
+    {
+      input: "#BD3F0A",
+      expected: { r: 189, g: 63, b: 10, value: "rgb(189,63,10)" },
+    },
+    {
+      input: "#A3BF7E",
+      expected: { r: 163, g: 191, b: 126, value: "rgb(163,191,126)" },
+    },
   ])(
     "should convert a valid hex color to its rgb equivalent",
     ({ input, expected }) => {
+      // arrange
+      const hexRed = input.substring(1, 3);
+      const hexGreen = input.substring(3, 5);
+      const hexBlue = input.substring(5, 7);
+
+      tintConverterSpy
+        .mockImplementationOnce(() => expected.r)
+        .mockImplementationOnce(() => expected.g)
+        .mockImplementationOnce(() => expected.b);
+
+      // act
       const rgbEquivalent = colorConverter.hexToRgb(input);
 
-      expect(rgbEquivalent).toBe(expected);
+      // assert
+      expect(TintConverter.prototype.hexToNum).toHaveBeenCalledTimes(3);
+
+      expect(TintConverter.prototype.hexToNum).toHaveBeenCalledWith(hexRed);
+      expect(TintConverter.prototype.hexToNum).toHaveBeenCalledWith(hexGreen);
+      expect(TintConverter.prototype.hexToNum).toHaveBeenCalledWith(hexBlue);
+      expect(rgbEquivalent).toBe(expected.value);
     }
   );
 });
