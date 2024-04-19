@@ -4,19 +4,6 @@ import { TintConverter } from "./";
 describe("tintConverter", () => {
   const tintConverter = container.resolve(TintConverter);
 
-  it.each([
-    { input: "00", expected: 0 },
-    { input: "9A", expected: 154 },
-    { input: "FF", expected: 255 },
-  ])(
-    "should convert a valid hex tint to its rgb equivalent",
-    ({ input, expected }) => {
-      const rgbEquivalent = tintConverter.hexToNum(input);
-
-      expect(rgbEquivalent).toBe(expected);
-    }
-  );
-
   it("should throw an error because it is empty", () => {
     // arrange
     // act
@@ -49,6 +36,19 @@ describe("tintConverter", () => {
 
       // assert
       expect(act).toThrow("Teinte hexadécimale invalide, caractère non valide");
+    }
+  );
+
+  it.each([
+    { input: "00", expected: 0 },
+    { input: "9A", expected: 154 },
+    { input: "FF", expected: 255 },
+  ])(
+    "should convert a valid hex tint to its rgb equivalent",
+    ({ input, expected }) => {
+      const rgbEquivalent = tintConverter.hexToNum(input);
+
+      expect(rgbEquivalent).toBe(expected);
     }
   );
 });

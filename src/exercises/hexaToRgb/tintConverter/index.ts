@@ -16,16 +16,16 @@ export class TintConverter {
       );
     }
 
-    const firstDigit = hexSplit[0].toUpperCase();
-    const secondDigit = hexSplit[1].toUpperCase();
+    const firstChar = hexSplit[0].toUpperCase();
+    const secondChar = hexSplit[1].toUpperCase();
 
-    const firstDigitValue = this.hexToNumCorrespondance.indexOf(firstDigit);
-    const secondDigitValue = this.hexToNumCorrespondance.indexOf(secondDigit);
+    const firstCharValue = this.hexToNumCorrespondance.indexOf(firstChar);
+    const secondCharValue = this.hexToNumCorrespondance.indexOf(secondChar);
 
-    if (firstDigitValue === -1 || secondDigitValue === -1) {
+    if (firstCharValue === -1 || secondCharValue === -1) {
       throw new Error("Teinte hexadécimale invalide, caractère non valide");
     }
 
-    return firstDigitValue * 16 + secondDigitValue;
+    return firstCharValue * 16 + secondCharValue;
   }
 }
